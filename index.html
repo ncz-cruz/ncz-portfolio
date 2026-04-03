@@ -428,17 +428,6 @@
         const themeToggleBtn = document.getElementById('theme-toggle');
         const htmlEl = document.documentElement;
 
-        // Check local storage for theme
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            htmlEl.classList.add('dark');
-            htmlEl.classList.remove('light');
-            themeToggleBtn.textContent = 'light_mode';
-        } else {
-            htmlEl.classList.add('light');
-            htmlEl.classList.remove('dark');
-            themeToggleBtn.textContent = 'dark_mode';
-        }
-
         themeToggleBtn.addEventListener('click', function () {
             if (htmlEl.classList.contains('dark')) {
                 htmlEl.classList.remove('dark');
